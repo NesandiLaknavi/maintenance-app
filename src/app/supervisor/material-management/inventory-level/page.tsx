@@ -1,9 +1,57 @@
 "use client";
+import React, { useState } from "react";
 import styles from "./inventory-level.module.css";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
-export default function InventoryLevel() {
+interface MachineData {
+    machineId: string;
+    brand: string;
+    model: string;
+    technicianId: string;
+    meterReading: string;
+}
+
+const initialData: MachineData[] = [
+    {
+        machineId: "",
+        brand: "",
+        model: "",
+        technicianId: "",
+        meterReading: ""
+    },
+    {
+        machineId: "",
+        brand: "",
+        model: "",
+        technicianId: "",
+        meterReading: ""
+    },
+    {
+        machineId: "",
+        brand: "",
+        model: "",
+        technicianId: "",
+        meterReading: ""
+    },
+    {
+        machineId: "",
+        brand: "",
+        model: "",
+        technicianId: "",
+        meterReading: ""
+    }
+];
+
+export default function MachineryListPage() {
+    const [machineryData, setMachineryData] = useState<MachineData[]>(initialData);
+
+    const handleInputChange = (index: number, field: keyof MachineData, value: string) => {
+        const newData = [...machineryData];
+        newData[index] = { ...newData[index], [field]: value };
+        setMachineryData(newData);
+    };
+
     return (
         <div className={styles.pageWrapper}>
             {/* Top Navbar */}
@@ -25,53 +73,92 @@ export default function InventoryLevel() {
                     <button className={styles.logoutBtn}>Logout</button>
                 </div>
             </nav>
+            
             <div className={styles.container}>
                 {/* Sidebar */}
                 <aside className={styles.sidebar}>
                     <nav className={styles.nav}>
-                        <button className={styles.navButton}>Machinery Management</button>
+                        <button className={`${styles.navButton} ${styles.active}`}>Machinery Management</button>
                         <button className={styles.navButton}>Service Notifications</button>
                         <button className={styles.navButton}>Maintenance Scheduling</button>
-                        <button className={`${styles.navButton} ${styles.active}`}>Material Management</button>
+                        <button className={styles.navButton}>Material Management</button>
                         <button className={styles.navButton}>Service Logs</button>
                         <button className={styles.navButton}>Historical Records</button>
                     </nav>
                     <button className={styles.backButton}>Back</button>
                 </aside>
+                
                 {/* Main Content */}
                 <main className={styles.contentArea}>
                     <div className={styles.card}>
-                        <h1 className={styles.title}>Inventory Level</h1>
+                        <h1 className={styles.title}>Machinery List</h1>
                         <div className={styles.tableWrapper}>
-                            <table className={styles.inventoryTable}>
+                            <table className={styles.machineryTable}>
                                 <thead>
                                     <tr>
-                                        <th>Material Name</th>
-                                        <th>Quantity in stock</th>
-                                        <th>Minimum Stock Level</th>
-                                        <th>Action</th>
+                                        <th>Machine ID</th>
+                                        <th>Brand</th>
+                                        <th>Model</th>
+                                        <th>Technician ID</th>
+                                        <th>Meter Reading</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Water Filter</td>
-                                        <td>2</td>
-                                        <td>5</td>
-                                        <td>
-                                            <button className={styles.restockBtn}>Restock</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Air Filter</td>
-                                        <td>1</td>
-                                        <td>4</td>
-                                        <td>
-                                            <button className={styles.restockBtn}>Restock</button>
-                                        </td>
-                                    </tr>
+                                    {machineryData.map((machine, index) => (
+                                        <tr key={index}>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    value={machine.machineId}
+                                                    onChange={(e) => handleInputChange(index, 'machineId', e.target.value)}
+                                                    placeholder="Enter ID"
+                                                    className={styles.inputField}
+                                                />
+                                            </td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    value={machine.brand}
+                                                    onChange={(e) => handleInputChange(index, 'brand', e.target.value)}
+                                                    placeholder="Enter Brand"
+                                                    className={styles.inputField}
+                                                />
+                                            </td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    value={machine.model}
+                                                    onChange={(e) => handleInputChange(index, 'model', e.target.value)}
+                                                    placeholder="Enter Model"
+                                                    className={styles.inputField}
+                                                />
+                                            </td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    value={machine.technicianId}
+                                                    onChange={(e) => handleInputChange(index, 'technicianId', e.target.value)}
+                                                    placeholder="Enter Tech ID"
+                                                    className={styles.inputField}
+                                                />
+                                            </td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    value={machine.meterReading}
+                                                    onChange={(e) => handleInputChange(index, 'meterReading', e.target.value)}
+                                                    placeholder="Enter Reading"
+                                                    className={styles.inputField}
+                                                />
+                                            </td>
+                                        </tr>
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
+                        <button className={styles.addButton}>
+                            Add New Machine
+                        </button>
                     </div>
                 </main>
             </div>

@@ -1,17 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./update-machinery-details.module.css";
-import { FaUserCircle, FaHome } from "react-icons/fa";
 import Link from "next/link";
-
-const sidebarItems = [
-    "Machinery Management",
-    "Service Notifications",
-    "Maintenance Scheduling",
-    "Material Management",
-    "Service Logs",
-    "Historical Records",
-];
+import Image from "next/image";
 
 const actionButtons = [
     { label: "Assign Technician" },
@@ -23,44 +14,43 @@ export default function EditMachineryPage() {
     const [form, setForm] = useState({ brand: "", model: "", machineId: "" });
 
     return (
-        <div className={styles.container}>
-            {/* Header */}
-            <div className={styles.header}>
-                <img src="/machnix-logo.png" alt="MachniX Logo" className={styles.logoImg} />
-                <div className={styles.headerActions}>
-                    <Link href="#">
-                        <button type="button" className={styles.iconBtn}>
-                            <FaHome size={28} style={{ color: "#000" }} />
+        <div className={styles.pageWrapper}>
+            {/* Navbar */}
+            <nav className={styles.navbar}>
+                <div className={styles.navbarLeft}>
+                    <Image src="/machnix-logo.png" alt="MachniX Logo" width={60} height={60} priority />
+                </div>
+                <div className={styles.navbarRight}>
+                    <Link href="/supervisor/dashboard">
+                        <button className={styles.iconBtn}>
+                            <Image src="/home-icon.png" alt="Home" width={32} height={32} />
                         </button>
                     </Link>
                     <Link href="/profile">
-                        <button type="button" className={styles.iconBtn}>
-                            <FaUserCircle size={28} style={{ color: "#000" }} />
+                        <button className={styles.iconBtn}>
+                            <Image src="/profile-icon.png" alt="Profile" width={32} height={32} />
                         </button>
                     </Link>
                     <button className={styles.logoutBtn}>Logout</button>
                 </div>
-            </div>
-            {/* Main Content */}
-            <div className={styles.mainContent}>
+            </nav>
+
+            <div className={styles.container}>
                 {/* Sidebar */}
-                <div className={styles.sidebar}>
-                    {sidebarItems.map((item) => (
-                        <button
-                            key={item}
-                            className={
-                                item === "Machinery Management"
-                                    ? `${styles.sidebarBtn} ${styles.sidebarBtnActive}`
-                                    : styles.sidebarBtn
-                            }
-                        >
-                            {item}
-                        </button>
-                    ))}
-                    <button className={styles.backBtn}>Back</button>
-                </div>
-                {/* Center Content */}
-                <div className={styles.centerContent}>
+                <aside className={styles.sidebar}>
+                    <nav className={styles.nav}>
+                        <button className={`${styles.navButton} ${styles.active}`}>Machinery Management</button>
+                        <button className={styles.navButton}>Service Notifications</button>
+                        <button className={styles.navButton}>Maintenance Scheduling</button>
+                        <button className={styles.navButton}>Material Management</button>
+                        <button className={styles.navButton}>Service Logs</button>
+                        <button className={styles.navButton}>Historical Records</button>
+                    </nav>
+                    <button className={styles.backButton}>Back</button>
+                </aside>
+
+                {/* Main Content */}
+                <main className={styles.contentArea}>
                     <h1 className={styles.title}>Edit Machinery</h1>
                     <form className={styles.form}>
                         <div className={styles.inputGroup}>
@@ -102,7 +92,7 @@ export default function EditMachineryPage() {
                             <button type="button" className={styles.cancelBtn}>Cancel</button>
                         </div>
                     </form>
-                </div>
+                </main>
             </div>
         </div>
     );

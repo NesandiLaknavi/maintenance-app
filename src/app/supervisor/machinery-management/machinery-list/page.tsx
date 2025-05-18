@@ -60,43 +60,45 @@ export default function MachineryListPage() {
     };
 
     return (
-        <div className={styles.container}>
-            {/* Header */}
-            <div className={styles.header}>
-                <Image
-                    src="/machnix-logo.png"
-                    alt="MachniX Logo"
-                    width={120}
-                    height={48}
-                    className={styles.logoImg}
-                />
-                <div className={styles.headerActions}>
-                    <Link href="/supervisor/dashboard" className={styles.iconBtn}>
-                        <Image
-                            src="/home-icon.png"
-                            alt="Home"
-                            width={28}
-                            height={28}
-                        />
+        <div className={styles.pageWrapper}>
+            {/* Navbar */}
+            <nav className={styles.navbar}>
+                <div className={styles.navbarLeft}>
+                    <Image src="/machnix-logo.png" alt="MachniX Logo" width={60} height={60} priority />
+                </div>
+                <div className={styles.navbarRight}>
+                    <Link href="/supervisor/dashboard">
+                        <button className={styles.iconBtn}>
+                            <Image src="/home-icon.png" alt="Home" width={32} height={32} />
+                        </button>
                     </Link>
-                    <Link href="/profile" className={styles.iconBtn}>
-                        <Image
-                            src="/user.png"
-                            alt="Profile"
-                            width={28}
-                            height={28}
-                        />
+                    <Link href="/profile">
+                        <button className={styles.iconBtn}>
+                            <Image src="/profile-icon.png" alt="Profile" width={32} height={32} />
+                        </button>
                     </Link>
                     <button className={styles.logoutBtn}>Logout</button>
                 </div>
-            </div>
-            {/* Main Content */}
-            <div className={styles.mainContent}>
-                <MachineryManagementSidebar activePage="Machinery Management" />
-                {/* Center Content */}
-                <div className={styles.centerContent}>
+            </nav>
+
+            <div className={styles.container}>
+                {/* Sidebar */}
+                <aside className={styles.sidebar}>
+                    <nav className={styles.nav}>
+                        <button className={`${styles.navButton} ${styles.active}`}>Machinery Management</button>
+                        <button className={styles.navButton}>Service Notifications</button>
+                        <button className={styles.navButton}>Maintenance Scheduling</button>
+                        <button className={styles.navButton}>Material Management</button>
+                        <button className={styles.navButton}>Service Logs</button>
+                        <button className={styles.navButton}>Historical Records</button>
+                    </nav>
+                    <button className={styles.backButton}>Back</button>
+                </aside>
+
+                {/* Main Content */}
+                <main className={styles.contentArea}>
                     <h1 className={styles.title}>Machinery List</h1>
-                    <div className={styles.tableContainer}>
+                    <div className={styles.tableWrapper}>
                         <table className={styles.table}>
                             <thead>
                                 <tr>
@@ -160,7 +162,7 @@ export default function MachineryListPage() {
                             Add New Machine
                         </button>
                     </div>
-                </div>
+                </main>
             </div>
         </div>
     );

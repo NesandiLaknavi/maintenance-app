@@ -1,3 +1,4 @@
+/* machinery-list.module.css */
 .pageWrapper {
     min-height: 100vh;
     background: #fbe7b9;
@@ -155,7 +156,7 @@
     border-radius: 16px;
     box-shadow: 0 4px 16px #a9444220;
     padding: 2.5rem 3rem;
-    min-width: 600px;
+    min-width: 800px;
     max-width: 90vw;
     display: flex;
     flex-direction: column;
@@ -176,38 +177,48 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
-.inventoryTable {
+.machineryTable {
     border-collapse: collapse;
     background: #ffe4e4;
     border-radius: 16px;
     box-shadow: 4px 8px 16px #a9444220;
     overflow: hidden;
-    min-width: 600px;
-    margin: 0 auto;
+    width: 100%;
 }
 
-.inventoryTable th,
-.inventoryTable td {
+.machineryTable th,
+.machineryTable td {
     border: 2px solid #000;
-    padding: 1.2rem 2rem;
+    padding: 1.2rem;
     text-align: center;
     font-size: 1.1rem;
 }
 
-.inventoryTable th {
+.machineryTable th {
     background: #ffe4e4;
     color: #222;
     font-weight: bold;
     font-size: 1.15rem;
 }
 
-.inventoryTable td {
-    color: #222;
+.inputField {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
 }
 
-.restockBtn {
+.inputField:focus {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.addButton {
     background: #8c5b4a;
     color: #fff;
     border: none;
@@ -218,9 +229,9 @@
     box-shadow: 0 4px 8px #a9444240;
     cursor: pointer;
     transition: background 0.2s;
-    margin: 0.2rem 0;
+    margin-top: 1rem;
 }
 
-.restockBtn:hover {
+.addButton:hover {
     background: #a94442;
 }
