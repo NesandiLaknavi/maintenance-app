@@ -7,31 +7,33 @@
 }
 
 .container {
-    display: flex;
     flex: 1;
-    margin-top: 70px;
+    height: calc(100vh - 70px);
+    background: #fbe7b9;
+    display: flex;
+    position: relative;
+    padding-left: 220px;
 }
 
 /* Navbar Styles */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #e2c178;
-    color: rgb(255, 254, 254);
+    width: 100%;
     height: 70px;
-    z-index: 1000;
+    background: #e2c178;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px #e2c17880;
+    z-index: 10;
+    position: relative;
 }
 
 .navbarLeft {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.7rem;
 }
 
 .navbarRight {
@@ -43,153 +45,129 @@
 .iconBtn {
     background: none;
     border: none;
+    padding: 0.3rem;
+    border-radius: 50%;
     cursor: pointer;
-    padding: 0.5rem;
-    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
 }
 
 .iconBtn:hover {
-    transform: scale(1.1);
-}
-
-.iconBtn img {
-    width: 28px;
-    height: 28px;
-    filter: brightness(0);
+    background: #ffe4e4;
 }
 
 .logoutBtn {
-    padding: 0.6rem 1.5rem;
-    background-color: #a94442;
-    color: white;
+    background: #8c5b4a;
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.6rem;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px #a9444240;
     cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s;
+    transition: background 0.2s;
 }
 
 .logoutBtn:hover {
-    background-color: #963c3a;
-    transform: translateY(-1px);
+    background: #a94442;
 }
 
 /* Sidebar Styles */
 .sidebar {
-    position: fixed;
-    top: 70px;
-    left: 0;
     width: 220px;
-    height: calc(100vh - 70px);
-    background-color: #e2c178;
-    padding: 1.5rem 1rem;
-    border-right: 1px solid #e5e7eb;
-    overflow-y: auto;
-    z-index: 900;
-    box-shadow: 2px 0 8px #e2c17880;
-    flex-direction: column;
+    background: #e2c178;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1.5rem 0;
+    box-shadow: 2px 0 8px #e2c17880;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    overflow-y: auto;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
 }
 
 .navButton {
-    display: block;
-    width: 100%;
-    padding: 0.8rem 1rem;
-    margin-bottom: 0.5rem;
-    text-align: left;
-    background: none;
+    width: 90%;
+    margin-bottom: 0;
+    padding: 0.8rem 0;
     border: none;
+    border-radius: 0.5rem;
+    background: #ffe4e4;
+    color: #8b4444;
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
-    font-weight: 500;
-    color: #4b5563;
-    border-radius: 6px;
-    transition: all 0.2s;
+    transition: background 0.2s;
+    box-shadow: 2px 4px 8px #a9444220;
 }
 
+.navButton.active,
 .navButton:hover {
-    background-color: #e0f2fe;
-    color: #8c5b4a;
-}
-
-.navButton.active {
-    background-color: #8c5b4a;
-    color: white;
+    background: #8c5b4a;
+    color: #fff;
 }
 
 .backButton {
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 1rem;
-    background-color: #8c5b4a;
-    color: white;
+    width: 90%;
+    margin-top: auto;
+    padding: 0.8rem 0;
     border: none;
-    border-radius: 6px;
+    border-radius: 0.5rem;
+    background: #8c5b4a;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s;
+    transition: background 0.2s;
+    box-shadow: 2px 4px 8px #a9444220;
 }
 
 .backButton:hover {
-    background-color: #7a4f3f;
+    background: #a94442;
 }
 
-/* Main Content */
+/* Content Area Styles */
 .contentArea {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
-    margin-left: 220px;
-    background: #fbe7b9;
+    min-height: 0;
+    background: none;
 }
 
 .pageTitle {
-    color: #000;
     font-size: 2rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
+    color: #8c5b4a;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-/* Filter Section */
 /* Filter Section */
 .filterSection {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     margin-bottom: 2rem;
-    align-items: center;
-}
-.searchBox {
-    flex: 1;
-    max-width: 400px;
-    position: relative;
-}
-.searchBox {
-    display: flex;
-    align-items: center;
-    background: #e9e9e9;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 2px 4px #a9444220;
-    min-width: 300px;
-}
-.searchInput {
     width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #000;
-    border-radius: 6px;
-    font-size: 1rem;
-    color: #000;
-    background-color: #fff;
+    justify-content: center;
+    color: #57595e;
 }
 
-.searchInput::placeholder {
-    color: #666;
-}
-
-.dateFilter {
-    flex: 1;
-    max-width: 400px;
-    position: relative;
-}
-.filterBox {
+.searchBox {
     display: flex;
     align-items: center;
     background: #e9e9e9;
@@ -198,147 +176,190 @@
     box-shadow: 0 2px 4px #a9444220;
     min-width: 300px;
 }
+
+.searchIcon {
+    margin-right: 0.5rem;
+}
+
+.searchInput {
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+    flex: 1;
+    outline: none;
+    color: #222;
+}
+
+.dateFilterContainer {
+    position: relative;
+}
+
 .filterBtn {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 1rem;
-    background: none;
-    border: 1px solid #000;
-    border-radius: 6px;
+    background: #e9e9e9;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    font-size: 1rem;
-    color: #000;
-    background-color: #fff;
-}
-.filterBtn:hover {
-    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px #a9444220;
 }
 
 .dropdownIcon {
-    font-size: 0.8rem;
-    margin-left: 0.25rem;
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
 }
+
+.datePickerWrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
 .dateInput {
-    padding: 0.8rem;
-    border: 1px solid #000;
-    border-radius: 6px;
-    color: #000;
-    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
 }
+
 /* Table Styles */
 .remindersTable {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 2rem;
-    border: 1px solid #000;
-}
-
-.remindersTable th,
-.remindersTable td {
-    border: 1px solid #000;
-    padding: 1rem;
-    text-align: left;
-    color: #000;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .remindersTable th {
-    background-color: #f1bcec;
+    background-color: #f9f3e9;
+    color: #8c5b4a;
+    padding: 1rem;
+    text-align: left;
     font-weight: 600;
 }
 
-.remindersTable tr:hover {
-    background-color: #f5f5f5;
+.remindersTable td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2c178;
+    color: #333;
 }
 
-/* Status Indicators */
-.statusPill {
+.remindersTable tr:hover {
+    background-color: #f9f3e9;
+}
+
+/* Status Dropdown Styles */
+.statusDropdownContainer {
+    position: relative;
     display: inline-block;
-    padding: 0.3rem 0.8rem;
-    border-radius: 1rem;
-    font-weight: 500;
-    font-size: 0.875rem;
-    border: 1px solid #000;
+}
+
+.statusPill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.statusPill:hover {
+    opacity: 0.9;
 }
 
 .statusPending {
-    background: #ffebee;
+    background: rgba(198, 40, 40, 0.1);
     color: #c62828;
+    border: 1px solid #c62828;
 }
 
 .statusUpcoming {
-    background: #e3f2fd;
-    color: #1565c0;
+    background: rgba(46, 125, 50, 0.1);
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
 }
 
-/* Action Checkboxes */
-.actionCheckboxes {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #000000;
+.statusDropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    margin-top: 0.5rem;
+    min-width: 120px;
 }
 
-.checkboxLabel {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.statusOption {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    border: none;
+    background: none;
     cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
 }
 
-.checkboxInput {
-    width: 1.2rem;
-    height: 1.2rem;
+.statusOption:hover {
+    background: #f5f5f5;
+}
+
+/* Action Buttons */
+.actionButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.actionButton {
+    background: #8c5b4a;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: background 0.2s;
+}
+
+.actionButton:hover {
+    background: #a94442;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding-left: 0;
+    }
+    
     .sidebar {
         display: none;
     }
     
-    .contentArea {
-        margin-left: 0;
-        padding: 1rem;
-    }
-    
     .filterSection {
         flex-direction: column;
+        align-items: center;
     }
     
-   
-/* Action Buttons */
-.actionButtons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #ddd;
-}
-
-.actionButton {
-    padding: 0.8rem 1.5rem;
-    border: 1px solid #000;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.2s;
-    background-color: #fbe7b9;
-    color: #000 !important; 
-}
-
-.actionButton:hover {
-    background-color: #e2c178;
-    transform: translateY(-1px);
-    color: #000 !important; 
-}
-
-.actionButton span,
-.actionButton .checkboxLabel {
-    color: #000 !important; 
-
-}
-
+    .searchBox,
+    .dateFilterContainer {
+        width: 100%;
+    }
 }

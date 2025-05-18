@@ -8,6 +8,7 @@ export default function ScheduleReminders() {
     const [dateFilter, setDateFilter] = useState("");
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [statusDropdown, setStatusDropdown] = useState<string | null>(null);
 
     const reminders = [
         {
@@ -49,6 +50,16 @@ export default function ScheduleReminders() {
         return `${year}-${month}-${day}`;
     };
 
+    const toggleStatusDropdown = (id: string) => {
+        setStatusDropdown(statusDropdown === id ? null : id);
+    };
+
+    const updateStatus = (id: string, newStatus: string) => {
+        // In a real app, you would update the status in your state/API here
+        console.log(`Updating status for ${id} to ${newStatus}`);
+        setStatusDropdown(null);
+    };
+
     const filteredReminders = reminders.filter(reminder => {
         const matchesSearch = reminder.machineId.toLowerCase().includes(searchQuery.toLowerCase()) || 
                             reminder.machine.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -81,8 +92,8 @@ export default function ScheduleReminders() {
                             <Image 
                                 src="/home-icon.png" 
                                 alt="Home" 
-                                width={28} 
-                                height={28} 
+                                width={32} 
+                                height={32} 
                             />
                         </button>
                     </Link>
@@ -91,8 +102,8 @@ export default function ScheduleReminders() {
                             <Image 
                                 src="/profile-icon.png" 
                                 alt="Profile" 
-                                width={28} 
-                                height={28} 
+                                width={32} 
+                                height={32} 
                             />
                         </button>
                     </Link>
@@ -120,19 +131,19 @@ export default function ScheduleReminders() {
                     
                     <div className={styles.filterSection}>
                         <div className={styles.searchBox}>
-                            
-                            <input
-                                type="text"
-                                className={styles.searchInput}
-                                placeholder="Search by Machine / Message Type"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            /><Image 
+                            <Image 
                                 src="/search.png" 
                                 alt="Search" 
                                 width={16} 
                                 height={16} 
                                 className={styles.searchIcon}
+                            />
+                            <input
+                                type="text"
+                                className={styles.searchInput}
+                                placeholder="Search by Machine / Technician"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
                             />
                         </div>
                         <div className={styles.dateFilterContainer}>
@@ -184,32 +195,51 @@ export default function ScheduleReminders() {
                                     <td>{reminder.techId}</td>
                                     <td>{reminder.techName}</td>
                                     <td>
-                                        <span className={`${styles.statusPill} ${
-                                            reminder.status === 'Pending' 
-                                            ? styles.statusPending 
-                                            : styles.statusUpcoming
-                                        }`}>
-                                            {reminder.status}
-                                        </span>
+                                        <div className={styles.statusDropdownContainer}>
+                                            <button 
+                                                className={`${styles.statusPill} ${
+                                                    reminder.status === 'Pending' 
+                                                    ? styles.statusPending 
+                                                    : styles.statusUpcoming
+                                                }`}
+                                                onClick={() => toggleStatusDropdown(reminder.id)}
+                                            >
+                                                {reminder.status}
+                                                <span className={styles.dropdownIcon}>▼</span>
+                                            </button>
+                                            {statusDropdown === reminder.id && (
+                                                <div className={styles.statusDropdownMenu}>
+                                                    <button 
+                                                        className={`${styles.statusOption} ${styles.statusPending}`}
+                                                        onClick={() => updateStatus(reminder.id, 'Pending')}
+                                                    >
+                                                        Pending
+                                                    </button>
+                                                    <button 
+                                                        className={`${styles.statusOption} ${styles.statusUpcoming}`}
+                                                        onClick={() => updateStatus(reminder.id, 'Upcoming')}
+                                                    >
+                                                        Upcoming
+                                                    </button>
+                                                </div>
+                                            )}
+                                        </div>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
 
-                    <div className={styles.actionCheckboxes}>
-                        <label className={styles.checkboxLabel}>
-                            <input type="checkbox" className={styles.checkboxInput} />
-                            <span>Reschedule</span>
-                        </label>
-                        <label className={styles.checkboxLabel}>
-                            <input type="checkbox" checked readOnly className={styles.checkboxInput} />
+                    <div className={styles.actionButtons}>
+                        <button className={styles.actionButton}>
+                            <span>Reschedule Selected</span>
+                        </button>
+                        <button className={styles.actionButton}>
                             <span>Mark Completed</span>
-                        </label>
-                        <label className={styles.checkboxLabel}>
-                            <input type="checkbox" className={styles.checkboxInput} />
+                        </button>
+                        <button className={styles.actionButton}>
                             <span>Export to Email</span>
-                        </label>
+                        </button>
                     </div>
                 </main>
             </div>
