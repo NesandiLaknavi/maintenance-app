@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './machinerymanagement.module.css';
+import styles from './machinery-management.module.css';
 
 const sidebarItems = [
     { label: 'Machinery Management', path: '/supervisor/machinery-management' },
@@ -14,10 +14,10 @@ const sidebarItems = [
 ];
 
 const actionButtons = [
-    { label: 'Add New Machinery', path: '#' },
-    { label: 'Update Machinery Information', path: '#' },
-    { label: 'Delete Machinery', path: '#' },
-    { label: 'Machinery List', path: '#' },
+    { label: 'Add New Machinery', path: '/supervisor/machinery-management/add-new-machinery' },
+    { label: 'Update Machinery Information', path: '/supervisor/machinery-management/update-machinery-details' },
+    { label: 'Delete Machinery', path: '/supervisor/machinery-management/delete-machinery' },
+    { label: 'Machinery List', path: '/supervisor/machinery-management/machinery-list' },
 ];
 
 export default function MachineryManagement() {
@@ -69,7 +69,9 @@ export default function MachineryManagement() {
                     <h1 className={styles.pageTitle}>Machinery Management</h1>
                     <div className={styles.actionBtnGroup}>
                         {actionButtons.map((btn) => (
-                            <button key={btn.label} className={styles.actionBtn}>{btn.label}</button>
+                            <Link key={btn.label} href={btn.path} className={styles.actionBtn}>
+                                {btn.label}
+                            </Link>
                         ))}
                     </div>
                 </div>

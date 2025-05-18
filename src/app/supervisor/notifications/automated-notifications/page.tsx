@@ -82,7 +82,7 @@ export default function AutomatedNotifications() {
                             </div>
                             <div className={styles.filterBox}>
                                 <button className={styles.filterBtn}>
-                                    <Image src="/calendar-icon.png" alt="Calendar" width={24} height={24} />
+                                    <Image src="/schedule.png" alt="" width={24} height={24} />
                                     <span>Filter By Date</span>
                                     <span className={styles.dropdownIcon}>▼</span>
                                 </button>
