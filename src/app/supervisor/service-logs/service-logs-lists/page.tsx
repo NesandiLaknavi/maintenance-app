@@ -6,18 +6,10 @@ import Link from "next/link";
 export default function ServiceLogsList() {
     const logsData = [
         {
-            name: "Material Management",
-            machineId: "MAC001",
-            machine: "XCM027",
-            date: "23-01-2025",
-            technicianId: "TEC001",
-            status: "Completed"
-        },
-        {
             name: "Service Logs",
             machineId: "MAC002",
             machine: "XCM027",
-            date: "24-01-2025",
+            date: "01-2025",
             technicianId: "TEC002",
             status: "Completed"
         },
@@ -79,55 +71,59 @@ export default function ServiceLogsList() {
                         <button className={styles.navButton}>Material Management</button>
                         <button className={`${styles.navButton} ${styles.active}`}>Service Logs</button>
                         <button className={styles.navButton}>Historical Records</button>
+                        <Link href="/supervisor/dashboard">
+                        <button className={styles.navButton}>Back</button>
+                        </Link>
                     </nav>
-                    <Link href="/supervisor/dashboard">
-                        <button className={styles.backButton}>Back</button>
-                    </Link>
                 </aside>
 
                 {/* Main Content */}
                 <main className={styles.contentArea}>
-                    <h1 className={styles.pageTitle}>Service Logs</h1>
-                    
-                    <table className={styles.logsTable}>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Machine ID</th>
-                                <th>Machine</th>
-                                <th>Date</th>
-                                <th>Technician ID</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {logsData.map((log, index) => (
-                                <tr key={index}>
-                                    <td>{log.name}</td>
-                                    <td>{log.machineId}</td>
-                                    <td>{log.machine}</td>
-                                    <td>{log.date}</td>
-                                    <td>{log.technicianId}</td>
-                                    <td>
-                                        <button 
-                                            className={`${styles.statusButton} ${
-                                                log.status === 'Completed' ? styles.completed :
-                                                log.status === 'Skipped' ? styles.skipped :
-                                                ''
-                                            }`}
-                                        >
-                                            {log.status}
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <div className={styles.card}>
+                        <h1 className={styles.pageTitle}>Historical Records</h1>
+                        
+                        <div className={styles.tableContainer}>
+                            <table className={styles.logsTable}>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Machine ID</th>
+                                        <th>Machine</th>
+                                        <th>Date</th>
+                                        <th>Technician ID</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {logsData.map((log, index) => (
+                                        <tr key={index}>
+                                            <td>{log.name}</td>
+                                            <td>{log.machineId}</td>
+                                            <td>{log.machine}</td>
+                                            <td>{log.date}</td>
+                                            <td>{log.technicianId}</td>
+                                            <td>
+                                                <span 
+                                                    className={`${styles.statusPill} ${
+                                                        log.status === 'Completed' ? styles.completed :
+                                                        log.status === 'Skipped' ? styles.skipped :
+                                                        ''
+                                                    }`}
+                                                >
+                                                    {log.status}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
 
-                    <div className={styles.tableFooter}>
-                        <Link href="/supervisor/dashboard">
-                            <button className={styles.backButton}>Back</button>
-                        </Link>
+                        <div className={styles.tableFooter}>
+                            <Link href="/supervisor/dashboard">
+                               
+                            </Link>
+                        </div>
                     </div>
                 </main>
             </div>
