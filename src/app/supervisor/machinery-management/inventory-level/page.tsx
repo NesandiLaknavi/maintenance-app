@@ -1,9 +1,7 @@
 "use client";
-
 import { useState } from 'react';
 import styles from './inventory-level.module.css';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 interface Material {
@@ -13,94 +11,60 @@ interface Material {
 }
 
 export default function StockLevelPage() {
-  const router = useRouter();
   const [materials, setMaterials] = useState<Material[]>([
-    {
-      name: 'Water Filter',
-      quantityInStock: 2,
-      minimumStockLevel: 5,
-    },
-    {
-      name: 'Air Filter',
-      quantityInStock: 1,
-      minimumStockLevel: 4,
-    },
+    { name: 'Water Filter', quantityInStock: 2, minimumStockLevel: 5 },
+    { name: 'Air Filter', quantityInStock: 1, minimumStockLevel: 4 },
   ]);
 
   const handleRestock = (materialName: string) => {
-    // Handle restock action here
     console.log(`Restocking ${materialName}`);
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.logoContainer}>
-          <Image
-            src="/machnix-logo.png"
-            alt="MachniX Logo"
-            width={60}
-            height={60}
-            priority
-            style={{ width: '60px', height: '60px' }}
-          />
+    <div className={styles.pageWrapper}>
+      {/* Navbar */}
+      <nav className={styles.navbar}>
+        <div className={styles.navbarLeft}>
+          <Image src="/machnix-logo.png" alt="MachniX Logo" width={60} height={60} priority />
         </div>
-        <div className={styles.headerActions}>
-          <Link href="/supervisor/dashboard" className={styles.headerIcon}>
-            <Image
-              src="/home-icon.png"
-              alt="Home"
-              width={32}
-              height={32}
-              priority
-            />
+        <div className={styles.navbarRight}>
+          <Link href="/dashboard">
+            <button className={styles.iconBtn}>
+              <Image src="/home-icon.png" alt="Home" width={32} height={32} />
+            </button>
           </Link>
-          <Link href="/profile" className={styles.headerIcon}>
-            <Image
-              src="/profile-icon.png"
-              alt="Profile"
-              width={32}
-              height={32}
-              priority
-            />
+          <Link href="/profile">
+            <button className={styles.iconBtn}>
+              <Image src="/profile-icon.png" alt="Profile" width={32} height={32} />
+            </button>
           </Link>
           <button className={styles.logoutBtn}>Logout</button>
         </div>
-      </div>
+      </nav>
 
-      <div className={styles.mainContent}>
-        <nav className={styles.sidebar}>
-          <button className={styles.sidebarBtn}>
-            Machinery Management
-          </button>
-          <button className={styles.sidebarBtn}>
-            Service Notifications
-          </button>
-          <button className={styles.sidebarBtn}>
-            Maintenance Scheduling
-          </button>
-          <button className={`${styles.sidebarBtn} ${styles.active}`}>
-            Material Management
-          </button>
-          <button className={styles.sidebarBtn}>
-            Service Logs
-          </button>
-          <button className={styles.sidebarBtn}>
-            Historical Records
-          </button>
-          <button className={styles.backBtn} onClick={() => router.back()}>
-            Back
-          </button>
-        </nav>
+      <div className={styles.container}>
+        {/* Sidebar */}
+        <aside className={styles.sidebar}>
+          <nav className={styles.nav}>
+            <button className={styles.navButton}>Machinery Management</button>
+            <button className={styles.navButton}>Service Notifications</button>
+            <button className={styles.navButton}>Maintenance Scheduling</button>
+            <button className={`${styles.navButton} ${styles.active}`}>Material Management</button>
+            <button className={styles.navButton}>Service Logs</button>
+            <button className={styles.navButton}>Historical Records</button>
+          </nav>
+          <button className={styles.backButton}>Back</button>
+        </aside>
 
+        {/* Main Content */}
         <main className={styles.contentArea}>
           <h1 className={styles.title}>Inventory Level</h1>
-          <div className={styles.tableContainer}>
+          <div className={styles.tableWrapper}>
             <table className={styles.table}>
               <thead>
                 <tr>
                   <th>Material Name</th>
-                  <th>Quantity in stock</th>
+                  <th>Quantity in Stock</th>
                   <th>Minimum Stock Level</th>
                   <th>Action</th>
                 </tr>
