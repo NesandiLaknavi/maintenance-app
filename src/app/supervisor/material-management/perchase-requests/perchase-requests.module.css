@@ -1,3 +1,4 @@
+/* material-purchase-approval.module.css */
 .pageWrapper {
     min-height: 100vh;
     background: #fbe7b9;
@@ -14,7 +15,7 @@
     justify-content: space-between;
     padding: 0 2.5rem;
     box-sizing: border-box;
-    box-shadow: 0 2px 8px #e2c17880;
+    box-shadow: 0 2px 8px rgba(226, 193, 120, 0.5);
     z-index: 10;
     position: relative;
 }
@@ -55,7 +56,7 @@
     padding: 0.7rem 2rem;
     font-size: 1.1rem;
     font-weight: 600;
-    box-shadow: 0 4px 8px #a9444240;
+    box-shadow: 0 4px 8px rgba(169, 68, 66, 0.25);
     cursor: pointer;
     transition: background 0.2s;
 }
@@ -66,11 +67,7 @@
 
 .container {
     flex: 1;
-    height: calc(100vh - 70px);
-    background: #fbe7b9;
     display: flex;
-    flex-direction: row;
-    position: relative;
 }
 
 .sidebar {
@@ -78,15 +75,8 @@
     background: #e2c178;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    padding: 1.5rem 0 1.5rem 0;
-    box-shadow: 2px 0 8px #e2c17880;
-    position: relative;
-    left: 0;
-    top: 0;
-    overflow-y: auto;
+    padding: 1.5rem 0;
+    box-shadow: 2px 0 8px rgba(226, 193, 120, 0.5);
 }
 
 .nav {
@@ -100,7 +90,6 @@
 
 .navButton {
     width: 90%;
-    margin-bottom: 0;
     padding: 0.8rem 0;
     border: none;
     border-radius: 0.5rem;
@@ -110,7 +99,7 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s;
-    box-shadow: 2px 4px 8px #a9444220;
+    box-shadow: 2px 4px 8px rgba(169, 68, 66, 0.125);
 }
 
 .navButton.active,
@@ -121,8 +110,7 @@
 
 .backButton {
     width: 90%;
-    margin-top: 0.3rem;
-    align-self: center;
+    margin-top: auto;
     padding: 0.8rem 0;
     border: none;
     border-radius: 0.5rem;
@@ -132,7 +120,6 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s;
-    box-shadow: 2px 4px 8px #a9444220;
 }
 
 .backButton:hover {
@@ -144,165 +131,139 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 220px;
-    padding: 2rem 0;
-    min-height: 0;
-    background: none;
+    padding: 2rem;
 }
 
 .card {
-    background: #fff7e6;
+    background: #ffe4e4;
     border-radius: 16px;
-    box-shadow: 0 4px 16px #a9444220;
+    box-shadow: 0 4px 16px rgba(169, 68, 66, 0.125);
     padding: 2.5rem 3rem;
-    min-width: 700px;
-    max-width: 90vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 800px;
+    max-width: 90%;
 }
 
 .title {
     font-size: 2.2rem;
     font-weight: bold;
     color: #222;
-    text-shadow: 2px 2px 4px #e2c17880;
-    margin-bottom: 2.5rem;
     text-align: center;
-}
-
-.filters {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
-    justify-content: center;
-}
-
-.searchBox {
-    display: flex;
-    align-items: center;
-    background: #e9e9e9;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 2px 4px #a9444220;
-    min-width: 300px;
-}
-
-.searchInput {
-    border: none;
-    background: transparent;
-    font-size: 1.1rem;
-    flex: 1;
-    outline: none;
-    color: #222;
-}
-
-.searchBtn {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-left: 0.5rem;
-}
-
-.filterBox {
-    display: flex;
-    align-items: center;
-}
-
-.filterBtn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #e9e9e9;
-    border: none;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 2px 4px #a9444220;
-}
-
-.dropdownIcon {
-    font-size: 1.1rem;
-}
-
-.tableWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
     margin-bottom: 2rem;
 }
 
-.purchaseTable {
-    border-collapse: collapse;
-    background: #ffe4e4;
-    border-radius: 16px;
-    box-shadow: 4px 8px 16px #a9444220;
-    overflow: hidden;
-    min-width: 600px;
-    margin: 0 auto;
+.searchSection {
+    margin: 2rem 0;
 }
 
-.purchaseTable th,
-.purchaseTable td {
-    border: 2px solid #000;
-    padding: 1.2rem 2rem;
-    text-align: center;
-    font-size: 1.1rem;
+.searchFilters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.purchaseTable th {
-    background: #ffe4e4;
-    color: #222;
-    font-weight: bold;
-    font-size: 1.15rem;
-}
-
-.purchaseTable td {
-    color: #222;
-}
-
-.statusSelect {
-    padding: 0.5rem 1.2rem;
+.searchInput,
+.statusFilter {
+    padding: 0.8rem;
+    border: 2px solid #e2c178;
     border-radius: 8px;
-    border: 1px solid #a94442;
     font-size: 1rem;
-    font-weight: 600;
-    background: #ffe4e4;
-    color: #8b4444;
-    box-shadow: 2px 4px 8px #a9444220;
+    background: white;
+    transition: all 0.2s;
+    color: #232e47;
+}
+
+.searchInput:focus,
+.statusFilter:focus {
+    outline: none;
+    border-color: #933532;
+    box-shadow: 0 0 0 2px rgba(147, 53, 50, 0.2);
+}
+
+.statusFilter {
     cursor: pointer;
 }
 
+.approvalTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.approvalTable th,
+.approvalTable td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 2px solid #f9e3ea;
+}
+
+.approvalTable th {
+    background: #f9e3ea;
+    color: #232e47;
+    font-weight: 600;
+}
+.approvalTableInput {
+    color: #232e47;
+}
 .actionButtons {
     display: flex;
-    justify-content: center;
-    gap: 3rem;
-    width: 100%;
+    gap: 0.5rem;
 }
 
-.confirmBtn,
-.cancelBtn {
-    background: #8c5b4a;
-    color: #fff;
+.approveBtn {
+    background: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: 0.5rem;
-    padding: 1rem 3rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-    box-shadow: 2px 4px 8px #a9444220;
+    border-radius: 4px;
     cursor: pointer;
-    margin-top: 1.5rem;
     transition: background 0.2s;
+    font-weight: 500;
 }
 
-.cancelBtn {
-    background: #a94442;
+.approveBtn:hover {
+    background: #45a049;
 }
 
-.confirmBtn:hover,
-.cancelBtn:hover {
-    opacity: 0.9;
+.rejectBtn {
+    background: #f44336;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 500;
+}
+
+.rejectBtn:hover {
+    background: #da190b;
+}
+
+.statusLabel {
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.approved {
+    background: #4CAF50;
+    color: white;
+}
+
+.rejected {
+    background: #f44336;
+    color: white;
+}
+
+.confirmationSection {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
 }
