@@ -12,7 +12,10 @@ const sidebarItems = [
     { label: 'Service Logs', path: '/supervisor/service-logs' },
     { label: 'Historical Records', path: '/reports' },
 ];
-
+const actionBtn = [
+    { label: 'Automated Notifications', path: '/supervisor/machinery-management/automated-notifications' },
+    { label: 'Schedule Maintenance Reminders', path: '/supervisor/machinery-management/schedule-reminders' },
+];
 export default function NotificationsPage() {
     const pathname = usePathname();
     return (
@@ -99,8 +102,11 @@ export default function NotificationsPage() {
                 <main className={styles.contentArea}>
                     <h1 className={styles.title}>Service Notifications</h1>
                     <div className={styles.buttonGroup}>
-                        <button className={styles.centerBtn}>Automated Notifications</button>
-                        <button className={styles.centerBtn}>Schedule Maintenance Reminders</button>
+                        {actionBtn.map(btn => (
+                            <Link key={btn.label} href={btn.path} className={styles.centerBtn}>
+                                {btn.label}
+                            </Link>
+                        ))}
                     </div>
                 </main>
             </div>

@@ -1,329 +1,229 @@
-.container {
-    padding-top: 70px;
+/* upcoming-maintenance.module.css */
+.pageWrapper {
     min-height: 100vh;
+    background: #fbe7b9;
     display: flex;
     flex-direction: column;
-    background-color: #E9D393;
 }
 
-.header {
-    width: 100%;
-    height: 70px;
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #E2C178;
+    background: #e2c178;
     padding: 0 2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 70px;
 }
 
-.logoContainer {
-    width: 60px;
-    height: 60px;
+.navbarLeft {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.logoContainer img {
-    width: 60px !important;
-    height: 60px !important;
-    object-fit: contain;
-}
-
-.headerActions {
+.navbarRight {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
-.headerIcon {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.iconBtn {
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: transform 0.2s;
+    padding: 0.3rem;
+    border-radius: 6px;
+    transition: background 0.2s;
 }
 
-.headerIcon:hover {
-    transform: scale(1.1);
+.iconBtn:hover {
+    background: #e0e7ef;
 }
 
 .logoutBtn {
-    background-color: #8B4444;
-    color: white;
-    padding: 0.5rem 1.5rem;
+    background: #933532;
+    color: #fff;
     border: none;
+    padding: 0.5rem 1.2rem;
     border-radius: 6px;
-    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
-    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: background 0.2s;
 }
 
 .logoutBtn:hover {
-    background-color: #723838;
+    background: #7a2d2a;
 }
 
-.mainContent {
-    flex: 1;
+.container {
     display: flex;
-    gap: 2rem;
-    padding: 1rem;
+    flex: 1;
+    min-height: 0;
 }
 
 .sidebar {
+    width: 200px;
+    background: #e2c178;
+    padding: 2rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    width: 220px;
-    padding: 1rem;
-    background-color: #E2C178;
-    border-radius: 8px;
+    align-items: stretch;
+    gap: 2rem;
 }
 
-.sidebarBtn {
-    width: 100%;
-    padding: 1rem;
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.navButton {
+    background: #f9e3ea;
+    color: #933532;
+    border: none;
     text-align: left;
-    background-color: #FFE4E4;
-    border: none;
+    padding: 0.7rem 1rem;
     border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s;
-    color: #000;
     font-size: 1rem;
-    font-weight: 500;
-}
-
-.sidebarBtn:hover {
-    background-color: #FFD5D5;
-    transform: translateY(-1px);
-}
-
-.sidebarBtn.active {
-    background-color: #8B4444;
-    color: white;
-}
-
-.backBtn {
-    margin-top: auto;
-    width: 100%;
-    padding: 1rem;
-    background-color: #8B4444;
-    color: white;
-    border: none;
-    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s;
-    font-weight: 500;
+    margin-bottom: 0.5rem;
+    box-shadow: 2px 2px 6px #0002;
+    transition: background 0.2s, color 0.2s;
 }
 
-.backBtn:hover {
-    background-color: #723838;
-    transform: translateY(-1px);
+.navButton:hover {
+    background: #933532;
+    color: #fff;
+}
+
+.active {
+    background: #933532;
+    color: #fff;
+}
+
+.backButton {
+    margin-top: auto;
+    background: #933532;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 2px 2px 6px #0002;
+    transition: background 0.2s;
+}
+
+.backButton:hover {
+    background: #7a2d2a;
 }
 
 .contentArea {
     flex: 1;
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: transparent;
 }
 
 .title {
-    font-size: 1.875rem;
-    font-weight: bold;
+    font-size: 2rem;
+    color: #232e47;
     margin-bottom: 2rem;
-    text-align: center;
-}
-
-.searchSection {
-    margin-bottom: 2rem;
-}
-
-.searchBar {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    background-color: white;
-    border-radius: 8px;
-    padding: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.searchInput {
-    flex: 1;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    outline: none;
-    background: transparent;
-    color: #000000;
-    font-weight: 500;
-}
-
-.searchInput::placeholder {
-    color: #9f9898;
-    opacity: 0.8;
-}
-
-.searchIcon {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    font-size: 1.25rem;
-}
-
-.dateRange {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-end;
-}
-
-.dateField {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.dateField label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #000000;
-}
-
-.dateInput {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-}
-
-.searchBtn {
-    background-color: #8B4444;
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    height: fit-content;
-}
-
-.searchBtn:hover {
-    background-color: #723838;
-}
-
-.maintenanceList {
-    background-color: #E2C178;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.listTitle {
-    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    align-self: flex-start;
 }
 
-.tableContainer {
-    overflow-x: auto;
+.tableWrapper {
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 2px 8px #0002;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid black;
+    table-layout: fixed;
 }
 
 .table th {
-    background-color: #FFB6C1;
-    padding: 1rem;
-    text-align: left;
+    background: #f9e3ea;
+    color: #232e47;
     font-weight: 600;
-    border: 1px solid black;
-    color: #000000;
+    padding: 1rem;
+    border-bottom: 2px solid #933532;
 }
 
 .table td {
     padding: 1rem;
-    border: 1px solid black;
-}
-
-.table tr:last-child td {
-    border-bottom: 1px solid black;
-}
-
-.updateBtn {
-    background-color: #E2C178;
-    color: black;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    font-weight: 500;
-}
-
-.updateBtn:hover {
-    background-color: #d4b16d;
+    color: #232e47;
+    border-bottom: 1px solid #eee;
+    text-align: center;
 }
 
 .tableInput {
     width: 100%;
     padding: 0.5rem;
-    border: none;
-    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 1rem;
-    outline: none;
+    transition: all 0.2s;
 }
 
 .tableInput:focus {
-    background-color: #f8f8f8;
+    outline: none;
+    border-color: #933532;
+    box-shadow: 0 0 0 2px rgba(147, 53, 50, 0.2);
 }
 
-.actionButtons {
+.actionCell {
     display: flex;
     gap: 0.5rem;
+    justify-content: center;
 }
 
-.deleteBtn {
-    background-color: #dc3545;
+.updateButton {
+    background: #e2c178;
+    color: #232e47;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.updateButton:hover {
+    background: #d4b16d;
+}
+
+.deleteButton {
+    background: #933532;
     color: white;
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s;
-    font-weight: 500;
+    transition: all 0.2s;
 }
 
-.deleteBtn:hover {
-    background-color: #c82333;
+.deleteButton:hover {
+    background: #7a2d2a;
 }
 
-.addRowBtn {
-    background-color: #8B4444;
+.addButton {
+    background: #933532;
     color: white;
     padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.2s;
-    font-weight: 500;
     margin-top: 1rem;
+    transition: all 0.2s;
 }
 
-.addRowBtn:hover {
-    background-color: #723838;
+.addButton:hover {
+    background: #7a2d2a;
 }
