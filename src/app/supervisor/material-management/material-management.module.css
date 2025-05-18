@@ -1,0 +1,226 @@
+.pageWrapper {
+    min-height: 100vh;
+    background: #fbe7b9;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    background: #e2c178;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px #e2c17880;
+    z-index: 10;
+    position: relative;
+}
+
+.navbarLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.logoText {
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #8c5b4a;
+    font-weight: bold;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.iconBtn {
+    background: none;
+    border: none;
+    padding: 0.3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.iconBtn:hover {
+    background: #ffe4e4;
+}
+
+.logoutBtn {
+    background: #8c5b4a;
+    color: #fff;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px #a9444240;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+    background: #a94442;
+}
+
+.container {
+    flex: 1;
+    height: calc(100vh - 70px);
+    background: #fbe7b9;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.sidebar {
+    width: 220px;
+    background: #e2c178;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 1.5rem 0 1.5rem 0;
+    box-shadow: 2px 0 8px #e2c17880;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+}
+
+.logoTextSidebar {
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #8c5b4a;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+    flex: 1;
+}
+
+.navButton {
+    width: 90%;
+    margin-bottom: 0;
+    padding: 0.8rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    background: #ffe4e4;
+    color: #8b4444;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 2px 4px 8px #a9444220;
+}
+
+.navButton.active,
+.navButton:hover {
+    background: #8c5b4a;
+    color: #fff;
+}
+
+.backButton {
+    width: 90%;
+    margin-top: 0.3rem;
+    align-self: center;
+    padding: 0.8rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    background: #8c5b4a;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 2px 4px 8px #a9444220;
+}
+
+.backButton:hover {
+    background: #a94442;
+}
+
+.contentArea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 220px;
+    padding: 0;
+    height: 100%;
+    min-height: 0;
+}
+
+.contentBox {
+    background: #fff7e6;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px #a9444220;
+    padding: 2rem 2.5rem;
+    min-width: 320px;
+    max-width: 90vw;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    overflow: auto;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #222;
+    text-shadow: 2px 2px 4px #e2c17880;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.centerBtn {
+    width: 100%;
+    background-color: #ffe4e4;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #8B4444;
+    cursor: pointer;
+    box-shadow: 2px 6px 8px #a9444220;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.centerBtn:hover {
+    background-color: #FFD5D5;
+    box-shadow: 2px 8px 16px #a9444220;
+}

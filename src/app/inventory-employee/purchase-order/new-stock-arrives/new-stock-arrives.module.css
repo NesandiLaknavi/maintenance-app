@@ -1,0 +1,163 @@
+.pageWrapper {
+    min-height: 100vh;
+    background: #fbe7b9;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e2c178;
+    padding: 0 2rem;
+    height: 70px;
+  }
+  
+  .navbarLeft {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbarRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .iconBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .iconBtn:hover {
+    background: #e0e7ef;
+  }
+  
+  .logoutBtn {
+    background: #933532;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: background 0.2s;
+  }
+  .logoutBtn:hover {
+    background: #933532;
+  }
+  
+  .container {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background: #e2c178;
+    padding: 2rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  
+  .navButton {
+    background: #f9e3ea;
+    color: #232e47;
+    border: none;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  .navButton:hover {
+    background: #933532;
+    color: #fff;
+  }
+  .active {
+    background: #933532;
+    color: #fff;
+  }
+  
+  .backButton {
+    margin-top: auto;
+    background: #933532;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .backButton:hover {
+    background: #7a2d2a;
+  }
+  
+  .contentArea {
+    flex: 1;
+    padding: 2.5rem 3rem;
+    background: transparent;
+    border-radius: 18px;
+    margin: 2rem 2rem 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #232e47;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 0 #fff, 2px 2px 2px #0002;
+  }
+  
+  .cardList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .stockCard {
+    background: #f9e3ea;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0002;
+    padding: 1.2rem 1.5rem;
+    min-width: 400px;
+    max-width: 500px;
+    font-size: 1.1rem;
+    color: #232e47;
+  }
+  
+  .cardTitle {
+    font-weight: 700;
+    color: #933532;
+    margin-bottom: 0.7rem;
+    font-size: 1.15rem;
+  }
+  
+  .cardDetails {
+    color: #232e47;
+    font-size: 1rem;
+    line-height: 1.5;
+  }

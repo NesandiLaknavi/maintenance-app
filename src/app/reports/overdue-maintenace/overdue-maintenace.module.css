@@ -1,0 +1,328 @@
+/* overdue-maintenace.module.css */
+.pageWrapper {
+  min-height: 100vh;
+  background: #fbe7b9;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e2c178;
+  padding: 0 2rem;
+  height: 70px;
+}
+
+.navbarLeft {
+  display: flex;
+  align-items: center;
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.iconBtn:hover {
+  background: #e0e7ef;
+}
+
+.logoutBtn {
+  background: #933532;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 1rem;
+  transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+  background: #7a2d2a;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar {
+  width: 200px;
+  background: #e2c178;
+  padding: 2rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.navButton {
+  background: #f9e3ea;
+  color: #933532;
+  border: none;
+  text-align: left;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  box-shadow: 2px 2px 6px #0002;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navButton:hover {
+  background: #933532;
+  color: #fff;
+}
+
+.active {
+  background: #933532;
+  color: #fff;
+}
+
+.backButton {
+  margin-top: auto;
+  background: #933532;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 2px 2px 6px #0002;
+  transition: background 0.2s;
+}
+
+.backButton:hover {
+  background: #7a2d2a;
+}
+
+.contentArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: transparent;
+}
+
+.title {
+  font-size: 2rem;
+  color: #232e47;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.filtersGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.selectorBar {
+  display: flex;
+  align-items: center;
+  background: #e7eaf3;
+  border: 2px solid #bdbdbd;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px #0001;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  position: relative;
+  height: 48px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.selectorBar:hover {
+  border-color: #933532;
+}
+
+.selectorIcon {
+  margin-right: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.selectorLabel {
+  color: #232e47;
+  font-weight: 500;
+  flex: 1;
+}
+
+.selectorValue {
+  color: #933532;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.selectorArrow {
+  color: #232e47;
+  font-size: 0.9rem;
+}
+
+.dateRangePopover {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  padding: 1.5rem;
+  z-index: 1000;
+  width: 320px;
+}
+
+.dateInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.dateLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #232e47;
+  font-size: 0.95rem;
+}
+
+.dateInput {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: all 0.2s;
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: #933532;
+  box-shadow: 0 0 0 2px rgba(147, 53, 50, 0.2);
+}
+
+.dateActionButtons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+.clearButton {
+  padding: 0.5rem 1rem;
+  background: #f9e3ea;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #933532;
+  transition: all 0.2s;
+}
+
+.clearButton:hover {
+  background: #f3d4dc;
+}
+
+.applyButton {
+  padding: 0.5rem 1.5rem;
+  background: #933532;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.applyButton:hover {
+  background: #7a2d2a;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdownItem {
+  padding: 0.8rem 1rem;
+  color: #232e47;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdownItem:hover {
+  background: #f9e3ea;
+}
+
+.tableWrapper {
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 2px 8px #0002;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table th {
+  background: #f9e3ea;
+  color: #232e47;
+  font-weight: 600;
+  padding: 1rem;
+  border-bottom: 2px solid #933532;
+}
+
+.table td {
+  padding: 1rem;
+  color: #232e47;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+/* Column Widths */
+.table th:nth-child(1) { width: 15%; } /* Date */
+.table th:nth-child(2) { width: 15%; } /* Machine ID */
+.table th:nth-child(3) { width: 20%; } /* Machine Name */
+.table th:nth-child(4) { width: 20%; } /* Last Service */
+.table th:nth-child(5) { width: 15%; } /* Due Date */
+.table th:nth-child(6) { width: 15%; } /* Days Overdue */
+
+.table tr:hover {
+  background-color: #f9f9f9;
+}

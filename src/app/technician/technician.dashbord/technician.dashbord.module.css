@@ -1,0 +1,117 @@
+.container {
+    min-height: 100vh;
+    background: #fbe7b9;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    background: #E2C178;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px #e2c17880;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.headerIcon img {
+    border-radius: 50%;
+   
+    
+}
+
+.logoutBtn {
+    background: #8c5b4a;
+    color: #fff;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px #a9444240;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+    background: #a94442;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2.5rem;
+}
+
+.profileRow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 2px 6px #a9444220;
+}
+
+.avatarImg {
+    border-radius: 50%;
+}
+
+.techName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.buttonList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.dashboardBtn {
+    width: 100%;
+    background-color: #ffe4e4;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #8B4444;
+    cursor: pointer;
+    box-shadow: 2px 6px 8px #a9444220;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.dashboardBtn:hover {
+    background-color: #FFD5D5;
+    box-shadow: 2px 8px 16px #a9444220;
+}

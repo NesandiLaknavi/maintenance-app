@@ -1,0 +1,266 @@
+.pageWrapper {
+    min-height: 100vh;
+    background: #fbe7b9;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e2c178;
+    padding: 0 2rem;
+    height: 70px;
+}
+
+.navbarLeft {
+    display: flex;
+    align-items: center;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.iconBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.iconBtn:hover {
+    background: #e0e7ef;
+}
+
+.logoutBtn {
+    background: #933532;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+    background: #7a2d2a;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+.sidebar {
+    width: 200px;
+    background: #e2c178;
+    padding: 2rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.navButton {
+    background: #f9e3ea;
+    color: #232e47;
+    border: none;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navButton:hover {
+    background: #933532;
+    color: #fff;
+}
+
+.active {
+    background: #933532;
+    color: #fff;
+}
+
+.backButton {
+    margin-top: auto;
+    background: #933532;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.backButton:hover {
+    background: #7a2d2a;
+}
+
+.contentArea {
+    flex: 1;
+    padding: 2.5rem 3rem;
+    background: transparent;
+    border-radius: 18px;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    color: #232e47;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.filtersRow {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.searchRow {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.7rem 2.5rem 0.7rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: #e7eaf3;
+    color: #232e47;
+    font-size: 1rem;
+    box-shadow: 2px 2px 6px #0001;
+}
+
+.searchBtn {
+    position: absolute;
+    top: 50%;
+    right: 0.7rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+.roleFilterBox {
+    position: relative;
+    background: #e7eaf3;
+    border-radius: 8px;
+    flex: 1;
+    max-width: 200px;
+    box-shadow: 2px 2px 6px #0001;
+}
+
+.roleFilterSelect {
+    width: 100%;
+    padding: 0.7rem 2rem 0.7rem 1rem;
+    border: none;
+    background: transparent;
+    color: #232e47;
+    font-size: 1rem;
+    appearance: none;
+    cursor: pointer;
+}
+
+.dropdownArrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #232e47;
+    font-size: 0.9rem;
+}
+
+.tableWrapper {
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 2px 8px #0002;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.table th {
+    background: #f9e3ea;
+    color: #232323;
+    font-weight: 600;
+}
+
+.tableInput {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: #000;
+    outline: none;
+}
+
+.statusSelect {
+    background: #f9e3ea;
+    color: #232e47;
+    border: 1px solid #933532;
+    border-radius: 6px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.addBtn {
+    background: #933532;
+    color: #fff;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-end;
+}
+
+.addBtn:hover {
+    background: #7a2d2a;
+}

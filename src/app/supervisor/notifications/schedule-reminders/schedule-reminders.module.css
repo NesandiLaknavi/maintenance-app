@@ -1,0 +1,344 @@
+/* Main Layout */
+.pageWrapper {
+    min-height: 100vh;
+    background: #fbe7b9;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    margin-top: 70px;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #e2c178;
+    color: rgb(255, 254, 254);
+    height: 70px;
+    z-index: 1000;
+}
+
+.navbarLeft {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.iconBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.iconBtn:hover {
+    transform: scale(1.1);
+}
+
+.iconBtn img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0);
+}
+
+.logoutBtn {
+    padding: 0.6rem 1.5rem;
+    background-color: #a94442;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+    background-color: #963c3a;
+    transform: translateY(-1px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 70px);
+    background-color: #e2c178;
+    padding: 1.5rem 1rem;
+    border-right: 1px solid #e5e7eb;
+    overflow-y: auto;
+    z-index: 900;
+    box-shadow: 2px 0 8px #e2c17880;
+    flex-direction: column;
+    display: flex;
+}
+
+.navButton {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: #4b5563;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.navButton:hover {
+    background-color: #e0f2fe;
+    color: #8c5b4a;
+}
+
+.navButton.active {
+    background-color: #8c5b4a;
+    color: white;
+}
+
+.backButton {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background-color: #8c5b4a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.backButton:hover {
+    background-color: #7a4f3f;
+}
+
+/* Main Content */
+.contentArea {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 220px;
+    background: #fbe7b9;
+}
+
+.pageTitle {
+    color: #000;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Filter Section */
+/* Filter Section */
+.filterSection {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.searchBox {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+}
+.searchBox {
+    display: flex;
+    align-items: center;
+    background: #e9e9e9;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px #a9444220;
+    min-width: 300px;
+}
+.searchInput {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #000;
+    background-color: #fff;
+}
+
+.searchInput::placeholder {
+    color: #666;
+}
+
+.dateFilter {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+}
+.filterBox {
+    display: flex;
+    align-items: center;
+    background: #e9e9e9;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px #a9444220;
+    min-width: 300px;
+}
+.filterBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    background: none;
+    border: 1px solid #000;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #000;
+    background-color: #fff;
+}
+.filterBtn:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdownIcon {
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
+}
+.dateInput {
+    padding: 0.8rem;
+    border: 1px solid #000;
+    border-radius: 6px;
+    color: #000;
+    background-color: #fff;
+}
+/* Table Styles */
+.remindersTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    border: 1px solid #000;
+}
+
+.remindersTable th,
+.remindersTable td {
+    border: 1px solid #000;
+    padding: 1rem;
+    text-align: left;
+    color: #000;
+}
+
+.remindersTable th {
+    background-color: #f1bcec;
+    font-weight: 600;
+}
+
+.remindersTable tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Status Indicators */
+.statusPill {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    border: 1px solid #000;
+}
+
+.statusPending {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.statusUpcoming {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+/* Action Checkboxes */
+.actionCheckboxes {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #000000;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkboxInput {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .contentArea {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    
+    .filterSection {
+        flex-direction: column;
+    }
+    
+   
+/* Action Buttons */
+.actionButtons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.actionButton {
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #000;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    background-color: #fbe7b9;
+    color: #000 !important; 
+}
+
+.actionButton:hover {
+    background-color: #e2c178;
+    transform: translateY(-1px);
+    color: #000 !important; 
+}
+
+.actionButton span,
+.actionButton .checkboxLabel {
+    color: #000 !important; 
+
+}
+
+}
