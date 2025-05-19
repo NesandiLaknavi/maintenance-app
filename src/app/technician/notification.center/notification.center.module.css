@@ -1,264 +1,190 @@
-.container {
-    display: flex;
+/* Base Styles */
+.pageWrapper {
     min-height: 100vh;
     background: #fbe7b9;
-}
-
-.sidebar {
-    width: 180px;
-    background: #e2c178;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
     justify-content: space-between;
-    height: 100vh;
-    padding: 1.5rem 0;
-    box-shadow: 2px 0 8px #e2c17880;
-}
-
-.logoContainer {
-    display: flex;
     align-items: center;
-    gap: 0.7rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-}
-
-.nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    flex: 1;
-    width: 100%;
-}
-.headerActions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.headerIcon img {
-    border-radius: 50%;
-   
-    
-}
-.logo {
-    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
-    font-size: 1.5rem;
-    color: #8c5b4a;
-    margin-bottom: 2rem;
-}
-/* Header Styles */
-.header {
-    height: 70px;
     background: #e2c178;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     padding: 0 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.headerRight {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.iconLink {
-    display: flex;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: background-color 0.2s;
-}
-
-.iconLink:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.iconLink img {
-    filter: brightness(0);
-}
-
-.logoutBtn {
-    background: #8c5b4a;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 0.6rem 1.5rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.logoutBtn:hover {
-    background: #963c3a;
-    transform: translateY(-1px);
-}
-
-/* Sidebar adjustments */
-.logoContainer {
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-}
-
-.nav {
-    margin-top: 1rem;
-}
-.logoutBtn:hover {
-    background: #a94442;
-}
-
-
-.logoContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-.navButton {
-    width: 90%;
-    margin-bottom: 0;
-    padding: 0.8rem 0;
-    border: none;
-    border-radius: 0.5rem;
-    background: #ffe4e4;
-    color: #8b4444;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.navButton.active,
-.navButton:hover {
-    background: #b98c5b;
-    color: #fff;
-}
-
-.backButton {
-    width: 90%;
-    margin-top: 2rem;
-    align-self: center;
-    padding: 0.8rem 0;
-    border: none;
-    border-radius: 0.5rem;
-    background: #8c5b4a;
-    color: #fff;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.backButton:hover {
-    background: #a94442;
-}
-
-.main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.header {
     height: 70px;
-    background: #e2c178;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 2.5rem;
     box-shadow: 0 2px 8px #e2c17880;
 }
 
-.profileIcon {
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    border-radius: 50%;
-    border: 1.5px solid #333;
-    margin-right: 1.5rem;
-}
-
-.logoutBtn {
-    background: #8c5b4a;
-    color: #fff;
-    border: none;
-    border-radius: 0.6rem;
-    padding: 0.7rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    box-shadow: 0 4px 8px #a9444240;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.logoutBtn:hover {
-    background: #a94442;
-}
-
-.content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px #e2c17880;
-}
-
-.buttonGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-}
-
-.centerBtn {
-    width: 320px;
-    background-color: #ffe4e4;
-    border: none;
-    border-radius: 0.75rem;
-    padding: 1rem 0;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #8b4444;
-    cursor: pointer;
-    box-shadow: 2px 6px 8px #a9444220;
-    transition: background-color 0.2s, box-shadow 0.2s;
-}
-
-.centerBtn:hover {
-    background-color: #ffd5d5;
-    box-shadow: 2px 8px 16px #a9444220;
-}
-
-.headerActions {
+.navbarLeft {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .iconBtn {
     background: none;
     border: none;
-    padding: 0.3rem;
-    border-radius: 50%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0.3rem;
+    border-radius: 6px;
     transition: background 0.2s;
 }
 
 .iconBtn:hover {
     background: #ffe4e4;
+}
+
+.logoutBtn {
+    background: #933532;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+    background: #7a2d2a;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 200px;
+    background: #e2c178;
+    padding: 2rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    box-shadow: 2px 0 8px #e2c17880;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.navButton {
+    background: #f9e3ea;
+    color: #933532;
+    border: none;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    box-shadow: 2px 2px 6px #0002;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navButton:hover,
+.navButton.active {
+    background: #933532;
+    color: #fff;
+}
+
+.backButton {
+    margin-top: auto;
+    background: #933532;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 2px 2px 6px #0002;
+    transition: background 0.2s;
+}
+
+.backButton:hover {
+    background: #7a2d2a;
+}
+
+/* Main Content Styles */
+.main {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #232e47;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.actionButton {
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background: #f9e3ea;
+    color: #933532;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 2px 2px 8px #0002;
+}
+
+.actionButton:hover {
+    background: #933532;
+    color: #fff;
+    box-shadow: 0 4px 12px #0003;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main {
+        padding: 1.5rem;
+    }
+    
+    .contentWrapper {
+        padding: 1.5rem;
+    }
+    
+    .title {
+        font-size: 1.7rem;
+    }
 }

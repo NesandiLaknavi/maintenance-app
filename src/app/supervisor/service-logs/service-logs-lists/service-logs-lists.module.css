@@ -98,7 +98,8 @@
 }
 
 /* Unified button styles - now applies to ALL buttons including back button */
-.navButton {
+.navButton, 
+.backButton {
     width: 90%;
     padding: 0.8rem 0;
     border: none;
@@ -114,33 +115,14 @@
     margin: 0 auto;
     display: block;
 }
-.backButton{
-    width: 700%;
-    padding: 0.7rem 0;
-    border: none;
-    border-radius: 0.5rem;
-    background: #8b4444;
-    color: #ece6e6;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-    box-shadow: 2px 4px 8px #a9444220;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-}
-
 
 .navButton.active,
-.navButton:hover {
+.navButton:hover,
+.backButton:hover {
     background: #8c5b4a;
     color: #fff;
 }
-.backButton:hover {
-    background: #ffffff;
-    color: #8c5b4a;
-}
+
 /* Content Area Styles */
 .contentArea {
     flex: 1;
