@@ -39,7 +39,7 @@ export default function InventoryManagement() {
           <h1 className={styles.title}>Inventory Management</h1>
           <div className={styles.buttonGroup}>
             <button className={styles.centerBtn}>Stock Levels</button>
-            <button className={styles.centerBtn}>Low Stock Alerts</button>
+            
           </div>
         </main>
       </div>

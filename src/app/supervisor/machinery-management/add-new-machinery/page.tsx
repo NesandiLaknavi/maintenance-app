@@ -19,7 +19,7 @@ export default function AddNewMachineryPage() {
         <div className={styles.container}>
             {/* Header */}
             <div className={styles.header}>
-                <img src="/machnix-logo.png" alt="MachniX Logo" className={styles.logoImg} />
+                <img src="/logo.png" alt="" className={styles.logoImg} />
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                     <FaHome size={28} style={{ color: '#000', cursor: 'pointer' }} />
                     <FaUserCircle size={28} style={{ color: '#000', cursor: 'pointer' }} />
